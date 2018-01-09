@@ -1,0 +1,11 @@
+# Project and build folders
+*/target
+target
+.idea
+*.iml
+**/*.iml
+*.ipr
+**/*.ipr
+.project
+.classpath
+.settings
