@@ -1,4 +1,4 @@
-package com.workfront.demo;
+package org.vap.demo;
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.Context;
