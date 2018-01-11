@@ -5,7 +5,7 @@ aws lambda invoke \
     --payload file://input.txt \
     --invocation-type RequestResponse \
     --region eu-west-2 \
-    --log-type Tail \
+    --log-type None \
     output.txt
 echo "--- Output ---"
 cat output.txt
