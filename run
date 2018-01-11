@@ -13,5 +13,7 @@ aws lambda invoke \
 t1=$(date +%s)
 
 echo "--- Output --- Runtime: "$((t1 - t0))" seconds ---"
+tput setaf 2
 cat output.txt
+tput sgr0
 echo ""
