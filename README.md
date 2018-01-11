@@ -13,7 +13,7 @@ aws lambda update-function-code \
 ```
 aws lambda invoke \
     --function-name arn:aws:lambda:eu-west-2:242867849850:function:Capitalize \
-    --payload file://input.txt \
+    --payload file://input.json \
     --invocation-type RequestResponse \
     --region eu-west-2 \
     --log-type Tail \
@@ -21,5 +21,5 @@ aws lambda invoke \
 ```
 ## Helper scripts
 * To assist development and testing, just perform `./update && ./run`
-* Input is in `input.txt` file
+* Input is in `input.json` file
 * The `output.txt` will contain the response from lambda function
