@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 rm output.txt
+t0=$(date +%s)
+
 aws lambda invoke \
     --function-name arn:aws:lambda:eu-west-2:242867849850:function:Capitalize \
-    --payload file://input.txt \
+    --payload file://input.json \
     --invocation-type RequestResponse \
     --region eu-west-2 \
     --log-type None \
     output.txt
-echo "--- Output ---"
+
+t1=$(date +%s)
+
+echo "--- Output --- Runtime: "$((t1 - t0))" seconds ---"
 cat output.txt
 echo ""
