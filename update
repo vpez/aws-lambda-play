@@ -1,11 +1,22 @@
 #!/usr/bin/env bash
+
+# Build artifact
 echo "Building the uber jar..."
 tput setaf 2
 mvn clean package
 tput sgr0
-echo "Deloying to AWS..."
-tput setaf 3
-aws lambda update-function-code \
-    --function-name arn:aws:lambda:eu-west-2:242867849850:function:Capitalize \
-    --zip-file fileb://target/aws-lambda-play-1.0.0.jar
-tput sgr0
+
+ZIP_FILE=fileb://target/aws-lambda-play-1.0.0.jar
+
+function deploy {
+    echo "Deploying function:"$1" to AWS using ZIP_FILE="${ZIP_FILE}
+    tput setaf 3
+    aws lambda update-function-code \
+        --function-name $1 \
+        --zip-file ${ZIP_FILE}
+    tput sgr0
+}
+
+# Deploy lambdas
+deploy test
+deploy rates

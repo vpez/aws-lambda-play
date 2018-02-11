@@ -1,4 +1,4 @@
-package org.vap.demo;
+package org.vap.demo.person;
 
 /**
  * @author Vahe Pezeshkian

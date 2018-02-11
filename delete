@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Usage
+# ./delete {Function Name}
+# ./delete test
+
+# Delete the function with given name
+aws lambda delete-function \
+    --function-name $1
+
+# List all available functions
+echo "All available functions"
+aws lambda list-functions | grep "FunctionArn"

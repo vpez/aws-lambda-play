@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
-rm output.txt
+
+echo "Usage: rates EUR Sale"
+
 t0=$(date +%s)
 
 aws lambda invoke \
-    --function-name test \
-    --payload file://input.json \
+    --function-name rates \
+    --payload "{\"currency\":\"$1\", \"type\":\"$2\"}" \
     --invocation-type RequestResponse \
     --region eu-west-2 \
     --log-type None \

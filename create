@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Usage
+# ./create {Function Name} {Package and class name}
+# ./create rates org.vap.demo.rates.Rates
+
+# Create a new function with given name
+aws lambda create-function \
+    --function-name $1 \
+    --runtime java8 \
+    --role arn:aws:iam::242867849850:role/service-role/Lambda-Play-Role \
+    --handler $2::handleRequest \
+    --zip-file fileb://target/aws-lambda-play-1.0.0.jar
+
+# List all available functions
+echo "All available functions"
+aws lambda list-functions | grep "FunctionArn"

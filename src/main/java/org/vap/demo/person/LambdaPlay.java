@@ -1,4 +1,4 @@
-package org.vap.demo;
+package org.vap.demo.person;
 
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.Context;
